@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://terrain.gd" type="Script" id=1]
+
+[node name="Terrain" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Chunks" type="Node2D" parent="."]
+
+[node name="BoundLine" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 40, 0, 40, 0, 0 )
+width = 0.1
+default_color = Color( 0, 0.501961, 0, 1 )
+
+[node name="BoundBody" type="StaticBody2D" parent="."]
+
+[node name="BoundShape" type="CollisionPolygon2D" parent="BoundBody"]
+build_mode = 1
+polygon = PoolVector2Array( 0, 0, 64, 0, 64, 40, 0, 40, 0, 0 )
